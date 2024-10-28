@@ -42,10 +42,12 @@ limit 10
 -- Which customer returned the most?
 
 select 	
-	customer_id,
-	sum(order_return) as returns
+	o.customer_id,
+	c.customer_name,
+	sum(o.order_return) as returns
 from orders o 
-group by customer_id
+inner join customers c on o.customer_id = c.customer_id 
+group by o.customer_id, c.customer_name
 order by returns desc
 limit 1
 
