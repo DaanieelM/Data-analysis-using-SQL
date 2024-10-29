@@ -99,3 +99,12 @@ select
 	,round(sales/sum(sales) over(partition by cost_year) * 100, 2) as percantage_of_sales
 from cost_forecast cf 
 order by value_of_sales desc
+
+-- Show the ranking with greatest number of returns in each year
+
+select 
+	year(order_date) as year_of_return
+	,sum(order_return) as returns
+	,dense_rank() over(partition by year(order_date) order by sum(order_return) desc) as ranking_of_returns
+from orders o 
+group by order_date
