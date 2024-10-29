@@ -90,7 +90,7 @@ inner join
 group by 1, 2, 3
 order by delivery_country
 
--- I will show total sales in every year. I will also show percentage of sales for each value of sales. It shows which sales were the highest or the lowest.
+-- I will show total sales in every year and I will also show percentage of sales for each value of sales. It shows which sales were the highest or the lowest.
 
 select
 	cost_year 
