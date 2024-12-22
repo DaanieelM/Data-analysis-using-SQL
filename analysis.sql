@@ -13,7 +13,7 @@ as
 delete from DuplicatedRows
 where rowNum > 1
 
--- How many orders are in the database?
+-- How many orders are there in the database?
 
 select 
 	count(order_id) as nr_of_orders
