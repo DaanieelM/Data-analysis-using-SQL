@@ -105,6 +105,7 @@ from orders o
 group by order_date
 
 --  Show the number of orders for years
+	
 select 
 	date_format(order_date, "%Y") as o_date
 	,count(order_id) as nr_of_orders
@@ -113,6 +114,7 @@ group by o_date
 order by o_date
 
 -- Show the number of returns for years
+	
 select 
 	date_format(order_date, "%Y") as o_date
 	,sum(order_return) as returns
