@@ -13,11 +13,6 @@ as
 delete from DuplicatedRows
 where rowNum > 1
 
--- How many orders are there in the database?
-
-select 
-	count(order_id) as nr_of_orders
-from orders
 
 -- The 10 cities with the highest order returns
 
